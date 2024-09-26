@@ -1,0 +1,1 @@
+npm i --force axios bootstrap react-router-dom react-bootstrap react-reveal sweetalert2
