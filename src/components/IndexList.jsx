@@ -40,6 +40,7 @@ const IndexList = () => {
         confirmButtonText: "Yes, delete it!",
       }).then(async (result) => {
         if (result.isConfirmed) {
+          console.log("delete id :", productId);
           await axios.delete(`${Api}/${productId}`);
           getProduct();
           Swal.fire("Deleted!", "File anda berhasil dihapus.", "success");

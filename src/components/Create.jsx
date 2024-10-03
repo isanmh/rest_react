@@ -30,7 +30,10 @@ const Create = () => {
     formData.append("name", name);
     formData.append("description", description);
     formData.append("price", price);
+
     try {
+      // log data dari form
+      console.log(formData.get("name"));
       await axios.post(Api, formData, {
         headers: {
           "Content-type": "multipart/form-data",
@@ -48,7 +51,7 @@ const Create = () => {
     } catch (error) {
       // console.log(error);
       if (error.response.status === 422) {
-        console.log(error.response.data.errors.image[0]);
+        console.log(error.response);
         setErrors(error.response.data.errors);
       }
     }
